@@ -1,15 +1,14 @@
 <template>
-  <div>
-    <list-games></list-games>
+  <div id="list-games">
+    <ul>
+      <li>Game list will go here</li>
+    </ul>
+
   </div>
 </template>
 
 <script>
-import listGames from './components/listGames.vue'
 export default {
-  components:{
-    'list-games': listGames
-  },
   data () {
     return {
     }
