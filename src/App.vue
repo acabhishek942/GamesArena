@@ -20,12 +20,12 @@ export default {
     return {
       title: 'Games Arena',
       games: [
-        {name: 'God of War', platform: 'Mac OSX'},
-        {name: 'Crazy Taxi', platform: 'Windows'},
-        {name: 'GTA 5', platform: 'Windows'},
-        {name: 'Tekken', platform: 'Windows'},
-        {name: 'Pocket Tanks', platform: 'Android/Windows'},
-        {name: 'Kwazy Cupcskes', platform: 'Android'}
+        {name: 'God of War', platform: 'Mac OSX', show: false},
+        {name: 'Crazy Taxi', platform: 'Windows', show: false},
+        {name: 'GTA 5', platform: 'Windows', show: false},
+        {name: 'Tekken', platform: 'Windows', show: false},
+        {name: 'Pocket Tanks', platform: 'Android/Windows', show: false},
+        {name: 'Kwazy Cupcskes', platform: 'Android', show: false}
       ]
     }
   },
