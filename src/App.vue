@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-header v-bind:title="title"></app-header>
-    <list-games></list-games>
+    <list-games v-bind:games="games"></list-games>
     <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
@@ -18,7 +18,15 @@ export default {
   },
   data () {
     return {
-      title: 'Games Arena'
+      title: 'Games Arena',
+      games: [
+        {name: 'God of War', platform: 'Mac OSX'},
+        {name: 'Crazy Taxi', platform: 'Windows'},
+        {name: 'GTA 5', platform: 'Windows'},
+        {name: 'Tekken', platform: 'Windows'},
+        {name: 'Pocket Tanks', platform: 'Android/Windows'},
+        {name: 'Kwazy Cupcskes', platform: 'Android'}
+      ]
     }
   },
   methods:{

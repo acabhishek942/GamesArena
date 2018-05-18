@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>Copyright 2017 {{ title }}</p>
+        <p>Copyright 2018 {{ title }}</p>
     </footer>
 </template>
 <script>
