@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 import listGames from './components/listGames.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
@@ -25,12 +26,24 @@ export default {
         {name: 'GTA 5', platform: 'Windows', show: false},
         {name: 'Tekken', platform: 'Windows', show: false},
         {name: 'Pocket Tanks', platform: 'Android/Windows', show: false},
-        {name: 'Kwazy Cupcskes', platform: 'Android', show: false}
+        {name: 'Kwazy Cupcskes', platform: 'Android', show: false},
+        {name: 'Far Cry 1', platform: 'Windows', show: false},
+        {name: 'Far Cry 2', platform: 'Windows', show: false},
+        {name: 'Far Cry 3', platform: 'Windows', show: false},
+        {name: 'Far Cry 4', platform: 'Windows', show: false},
+        {name: 'Far Cry 5', platform: 'Windows', show: false},
+        {name: 'EA FIFA 11', platform: 'Windows', show: false},
+        {name: 'EA FIFA 12', platform: 'Windows', show: false},
+        {name: 'EA FIFA 13', platform: 'Windows', show: false},
+        {name: 'EA FIFA 14', platform: 'Windows', show: false},
+        {name: 'EA FIFA 15', platform: 'Windows', show: false},
+        {name: 'EA FIFA 16', platform: 'Windows', show: false},
+        {name: 'EA FIFA 17', platform: 'Windows', show: false},
       ]
     }
   },
   methods:{
-  }
+  },
 }
 </script>
 
