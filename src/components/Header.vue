@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 header{
-  background: lightgreen;
+  background: #222;
   padding: 10px;
   position: fixed;
   top: 0;
@@ -32,7 +32,7 @@ header{
   text-align: center;
 }
 h1{
-  color: #222;
+  color: lightgreen;
   text-align: center;
 }
 </style>
