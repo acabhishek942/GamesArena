@@ -32,7 +32,7 @@ export default {
     width: 100%;
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 50px 20px;
     box-sizing: border-box;
 }
 ul{
