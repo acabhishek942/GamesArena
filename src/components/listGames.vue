@@ -3,7 +3,8 @@
     <ul>
       <li v-for="game in games" v-on:click="game.show = !game.show">
         <h2>{{ game.name }}</h2>
-        <h3 v-show="game.show">{{ game.platform }}</h3>
+        <h3 v-show="game.show">Platform : {{ game.platform }}</h3>
+        <h3 v-show="game.show">High Score : {{ game.highScore }}</h3>
       </li>
     </ul>
 
