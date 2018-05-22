@@ -5,7 +5,7 @@
         <h2>{{ game.title }}</h2>
         <div v-show="game.show">
           <h3>Platform : {{ game.platform }}</h3>
-          <h3>High Score : {{ game.highScore }}</h3>
+          <h3>High Score : {{ game.score }}</h3>
         </div>
       </li>
     </ul>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 export default {
   props: {
   },
@@ -27,9 +26,14 @@ export default {
   },
   created(){
     this.$http.get('http://starlord.hackerearth.com/gamesext').then(function(data){
-      console.log(data);
-      this.games = data.body.slice(11, 20);
-      console.log(this.games);
+      return data.json();
+    }).then(function(data){
+      var gamesArray = [];
+      for (let key in data){
+        data[key].show = false;
+        gamesArray.push(data[key]);
+      }
+      this.games = gamesArray.slice(20, 31);
     });
   }
 }
