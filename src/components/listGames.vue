@@ -3,6 +3,7 @@
     <ul>
       <li v-for="game in games" v-on:click="game.show = !game.show">
         <h2>{{ game.title }}</h2>
+        <!-- Display platform and score only on click -->
         <div v-show="game.show">
           <h3>Platform : {{ game.platform }}</h3>
           <h3>High Score : {{ game.score }}</h3>
@@ -25,10 +26,13 @@ export default {
   methods:{
   },
   created(){
+    // refer https://youtu.be/ieCsEdq94TA?list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&t=575
+    // to understand this lifecycke hook.
     this.$http.get('http://starlord.hackerearth.com/gamesext').then(function(data){
       return data.json();
     }).then(function(data){
       var gamesArray = [];
+      // below three lines add the property 'show' to all the objects in gamesArray
       for (let key in data){
         data[key].show = false;
         gamesArray.push(data[key]);
