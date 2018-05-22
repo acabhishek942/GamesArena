@@ -1,13 +1,10 @@
 <template>
   <div id="list-games">
     <ul>
-      <li v-for="game in games" v-on:click="game.show = !game.show">
+      <li v-for="game in games">
         <h2>{{ game.title }}</h2>
         <!-- Display platform and score only on click -->
-        <div v-show="game.show">
-          <h3>Platform : {{ game.platform }}</h3>
-          <h3>High Score : {{ game.score }}</h3>
-        </div>
+          <button v-on:click="showGameDetails(game)">Show Details</button>
       </li>
     </ul>
 
@@ -24,6 +21,9 @@ export default {
     }
   },
   methods:{
+    showGameDetails: function(){
+      this.$emit('I clicked');
+    }
   },
   created(){
     // refer https://youtu.be/ieCsEdq94TA?list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&t=575
