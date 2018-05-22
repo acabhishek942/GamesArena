@@ -2,7 +2,7 @@
   <div id="list-games">
     <ul>
       <li v-for="game in games" v-on:click="game.show = !game.show">
-        <h2>{{ game.name }}</h2>
+        <h2>{{ game.title }}</h2>
         <div v-show="game.show">
           <h3>Platform : {{ game.platform }}</h3>
           <h3>High Score : {{ game.highScore }}</h3>
@@ -14,18 +14,23 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   props: {
-  games: {
-    type: Array,
-    required: true
-  }
-},
+  },
   data () {
     return {
+      games: []
     }
   },
   methods:{
+  },
+  created(){
+    this.$http.get('http://starlord.hackerearth.com/gamesext').then(function(data){
+      console.log(data);
+      this.games = data.body.slice(11, 20);
+      console.log(this.games);
+    });
   }
 }
 </script>
