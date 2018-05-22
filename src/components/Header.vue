@@ -5,20 +5,15 @@
 </template>
 
 <script>
+
 export default {
-  props: {
-  title: {
-    type: String,
-    required: true
-  }
-},
   data () {
     return {
-
+      title: 'Games Arena',
     }
   },
   methods:{
-  }
+  },
 }
 </script>
 

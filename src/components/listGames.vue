@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { bus } from '../main';
 export default {
   props: {
   },
@@ -21,8 +22,9 @@ export default {
     }
   },
   methods:{
-    showGameDetails: function(){
-      this.$emit('I clicked');
+    showGameDetails: function(game){
+      // this.$emit('show-game-detail-modal', 'Foo');
+      bus.$emit('show-game-detail-modal', game)
     }
   },
   created(){
@@ -37,7 +39,7 @@ export default {
         data[key].show = false;
         gamesArray.push(data[key]);
       }
-      this.games = gamesArray.slice(20, 31);
+      this.games = gamesArray.slice(20, 30);
     });
   }
 }

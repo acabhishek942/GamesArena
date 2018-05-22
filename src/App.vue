@@ -1,26 +1,27 @@
 <template>
   <div>
-    <app-header v-bind:title="title"></app-header>
+    <app-header></app-header>
     <list-games></list-games>
-    <app-footer v-bind:title="title"></app-footer>
+    <app-footer></app-footer>
+    <games-modal></games-modal>
   </div>
 </template>
 
 <script>
-
 import listGames from './components/listGames.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+import gamesDetailsModal from './components/gameDetailsModal.vue'
 
 export default {
   components:{
     'list-games': listGames,
     'app-header': Header,
     'app-footer': Footer,
+    'games-modal': gamesDetailsModal,
   },
   data () {
     return {
-      title: 'Games Arena',
     }
   },
   methods:{
