@@ -22,7 +22,6 @@ export default {
   },
   methods:{
     showGameDetails: function(game){
-      // this.$emit('show-game-detail-modal', 'Foo');
       bus.$emit('show-game-detail-modal', game)
     }
   },
