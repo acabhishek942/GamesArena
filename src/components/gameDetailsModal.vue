@@ -1,55 +1,52 @@
 <template>
   <transition name="modal" v-if="isActive">
-      <div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
-
-            <div class="modal-header">
-              <slot name="header">
-                <p>
-                  {{ game.title }}
-                </p>
-              </slot>
-            </div>
-
-            <div class="modal-body">
-              <slot name="body">
-                Genre : {{ game.genre }}
-              </slot>
-            </div>
-            <div class="modal-body">
-              <slot name="body">
-                Platform(s) : {{ game.platform }}
-              </slot>
-            </div>
-            <div class="modal-body">
-              <slot name="body">
-                Release Year : {{ game.release_year }}
-              </slot>
-            </div>
-            <div class="modal-body">
-              <slot name="body">
-                Score : {{ game.score }}
-              </slot>
-            </div>
-            <div class="modal-body">
-              <slot name="body">
-                Link : {{ game.url }}
-              </slot>
-            </div>
-
-            <div class="modal-footer">
-              <slot name="footer">
-                That's All the details
-                <button class="modal-default-button" v-on:click="closeGameDetails()">
-                  OK
-                </button>
-              </slot>
-            </div>
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="modal-header">
+            <slot name="header">
+              <p>
+                {{ game.title }}
+              </p>
+            </slot>
+          </div>
+          <div class="modal-body">
+            <slot name="body">
+              Genre : {{ game.genre }}
+            </slot>
+          </div>
+          <div class="modal-body">
+            <slot name="body">
+              Platform(s) : {{ game.platform }}
+            </slot>
+          </div>
+          <div class="modal-body">
+            <slot name="body">
+              Release Year : {{ game.release_year }}
+            </slot>
+          </div>
+          <div class="modal-body">
+            <slot name="body">
+              Score : {{ game.score }}
+            </slot>
+          </div>
+          <div class="modal-body">
+            <slot name="body">
+              Link : {{ game.url }}
+            </slot>
+          </div>
+          <div class="modal-footer">
+            <slot name="footer">
+              That's All the details
+              <button class="modal-default-button" v-on:click="closeGameDetails()">
+              OK
+              </button>
+            </slot>
           </div>
         </div>
       </div>
-    </transition>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -100,7 +97,7 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 70%;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -112,7 +109,15 @@ export default {
 
 .modal-header p{
   margin-top: 0;
-  color: #lightgreen;
+  color: lightgreen;
+  font-size: 40px;
+  text-align: center;
+
+}
+
+.modal-header {
+  background-color: #222;
+  height: 50px;
 }
 
 .modal-body {
