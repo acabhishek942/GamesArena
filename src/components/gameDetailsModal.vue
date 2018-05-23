@@ -37,7 +37,10 @@
           </div>
           <div class="modal-footer">
             <slot name="footer">
-              That's All the details
+              <p>
+                That's All the details
+              </p>
+
               <button class="modal-default-button" v-on:click="closeGameDetails()">
               OK
               </button>
@@ -116,6 +119,19 @@ export default {
 }
 
 .modal-header {
+  background-color: #222;
+  height: 50px;
+}
+
+.modal-footer p{
+  margin-top: 0;
+  color: lightgreen;
+  font-size: 40px;
+  text-align: center;
+
+}
+
+.modal-footer {
   background-color: #222;
   height: 50px;
 }
