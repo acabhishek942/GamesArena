@@ -7,7 +7,6 @@
           <button v-on:click="showGameDetails(game)">Show Details</button>
       </li>
     </ul>
-
   </div>
 </template>
 

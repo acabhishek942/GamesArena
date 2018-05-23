@@ -5,8 +5,12 @@
         <div class="modal-container">
           <div class="modal-header">
             <slot name="header">
+
               <p>
                 {{ game.title }}
+                <span class="close" v-on:click="closeGameDetails()">
+                  &times;
+                </span>
               </p>
             </slot>
           </div>
@@ -40,10 +44,6 @@
               <p>
                 That's All the details
               </p>
-
-              <button class="modal-default-button" v-on:click="closeGameDetails()">
-              OK
-              </button>
             </slot>
           </div>
         </div>
@@ -102,7 +102,6 @@ export default {
 .modal-container {
   width: 70%;
   margin: 0px auto;
-  padding: 20px 30px;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
@@ -115,6 +114,7 @@ export default {
   color: lightgreen;
   font-size: 40px;
   text-align: center;
+  width: 100%;
 
 }
 
@@ -128,6 +128,7 @@ export default {
   color: lightgreen;
   font-size: 40px;
   text-align: center;
+  width: 100%;
 
 }
 
@@ -165,6 +166,22 @@ export default {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: lightgreen;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 </style>
