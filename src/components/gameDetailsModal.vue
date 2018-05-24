@@ -5,7 +5,6 @@
         <div class="modal-container">
           <div class="modal-header">
             <slot name="header">
-
               <p>
                 {{ game.title }}
                 <span class="close" v-on:click="closeGameDetails()">
@@ -14,31 +13,14 @@
               </p>
             </slot>
           </div>
-          <div class="modal-body">
-            <slot name="body">
-              Genre : {{ game.genre }}
-            </slot>
+          <div>
+            <img src='http://ecx.images-amazon.com/images/I/21-leKb-zsL._SL500_AA300_.png' class='gamesImage'>
           </div>
-          <div class="modal-body">
-            <slot name="body">
-              Platform(s) : {{ game.platform }}
-            </slot>
-          </div>
-          <div class="modal-body">
-            <slot name="body">
-              Release Year : {{ game.release_year }}
-            </slot>
-          </div>
-          <div class="modal-body">
-            <slot name="body">
-              Score : {{ game.score }}
-            </slot>
-          </div>
-          <div class="modal-body">
-            <slot name="body">
-              Link : {{ game.url }}
-            </slot>
-          </div>
+          <h4>Genre : {{ game.genre }}</h4>
+          <h4>Platform(s) : {{ game.platform }}</h4>
+          <h4>Release Year : {{ game.release_year }}</h4>
+          <h4>Score : {{ game.score }}</h4>
+          <h4>Link : {{ game.url }}</h4>
           <div class="modal-footer">
             <slot name="footer">
               <p>
@@ -100,7 +82,7 @@ export default {
 }
 
 .modal-container {
-  width: 70%;
+  width: 50%;
   margin: 0px auto;
   background-color: #fff;
   border-radius: 2px;
@@ -135,10 +117,15 @@ export default {
 .modal-footer {
   background-color: #222;
   height: 50px;
+  text-align: center;
 }
 
 .modal-body {
   margin: 20px 0;
+}
+
+.modal-body p {
+  padding-left: 200px;
 }
 
 .modal-default-button {
@@ -182,6 +169,19 @@ export default {
     color: lightgreen;
     text-decoration: none;
     cursor: pointer;
+}
+
+.gamesImage {
+margin-left: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+float: left;
+height: 170px;
+width: 200px;
+}
+
+h4 {
+  margin: 20px;
 }
 
 </style>
