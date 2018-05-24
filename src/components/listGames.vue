@@ -37,7 +37,7 @@ export default {
         data[key].show = false;
         gamesArray.push(data[key]);
       }
-      this.games = gamesArray.slice(20, 30);
+      this.games = gamesArray.slice(20, 37);
     });
   }
 }

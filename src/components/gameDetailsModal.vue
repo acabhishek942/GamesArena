@@ -6,27 +6,22 @@
           <div class="modal-header">
             <slot name="header">
               <p>
-                {{ game.title }}
+                <b><i>{{ game.title }}</i></b>
                 <span class="close" v-on:click="closeGameDetails()">
-                  &times;
+                &times;
                 </span>
               </p>
             </slot>
           </div>
-          <div>
-            <img src='http://ecx.images-amazon.com/images/I/21-leKb-zsL._SL500_AA300_.png' class='gamesImage'>
-          </div>
-          <h4>Genre : {{ game.genre }}</h4>
-          <h4>Platform(s) : {{ game.platform }}</h4>
-          <h4>Release Year : {{ game.release_year }}</h4>
-          <h4>Score : {{ game.score }}</h4>
-          <h4>Link : {{ game.url }}</h4>
-          <div class="modal-footer">
-            <slot name="footer">
-              <p>
-                That's All the details
-              </p>
-            </slot>
+          <div class='gamesImage'>
+            <img src='https://www.callofduty.com/content/dam/atvi/callofduty/wwii/home/Stronghold_Metadata_Image.jpg' />
+            <h4>Genre : {{ game.genre }}<br /><br />
+              Platform(s) : {{ game.platform }}<br /><br />
+              Release Year : {{ game.release_year }}<br /><br />
+              Score : {{ game.score }}<br /><br />
+              Link : {{ game.url }}
+            </h4>
+            <br /><br />
           </div>
         </div>
       </div>
@@ -64,6 +59,48 @@ export default {
 </script>
 
 <style scoped>
+
+h4 {
+  margin: 40px;
+  position: absolute;
+  color: white;
+  top: 150px;
+}
+/* The Close Button */
+.close {
+  color: #7f8793;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gamesImage {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  float: left;
+  height: 170px;
+  width: 95%;
+  position: relative;
+}
+
+.gamesImage img{
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
+  height: 350px;
+  width: 95%;
+  position: relative;
+}
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -83,6 +120,7 @@ export default {
 
 .modal-container {
   width: 50%;
+  height: 45%;
   margin: 0px auto;
   background-color: #fff;
   border-radius: 2px;
@@ -93,43 +131,14 @@ export default {
 
 .modal-header p{
   margin-top: 0;
-  color: lightgreen;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
   width: 100%;
-
+  color: #7f8793;
 }
 
 .modal-header {
-  background-color: #222;
   height: 50px;
-}
-
-.modal-footer p{
-  margin-top: 0;
-  color: lightgreen;
-  font-size: 40px;
-  text-align: center;
-  width: 100%;
-
-}
-
-.modal-footer {
-  background-color: #222;
-  height: 50px;
-  text-align: center;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
-
-.modal-body p {
-  padding-left: 200px;
-}
-
-.modal-default-button {
-  float: right;
 }
 
 /*
@@ -154,34 +163,4 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    padding-right: 10px;
-}
-
-.close:hover,
-.close:focus {
-    color: lightgreen;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.gamesImage {
-margin-left: 20px;
-margin-top: 20px;
-margin-bottom: 20px;
-float: left;
-height: 170px;
-width: 200px;
-}
-
-h4 {
-  margin: 20px;
-}
-
 </style>
