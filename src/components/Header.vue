@@ -1,6 +1,7 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
+
   </header>
 </template>
 
@@ -18,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-header{
+header {
   background: #222;
   padding: 10px;
   position: fixed;
@@ -26,7 +27,7 @@ header{
   width: 100%;
   text-align: center;
 }
-h1{
+h1 {
   color: lightgreen;
   text-align: center;
 }

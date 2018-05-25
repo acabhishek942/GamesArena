@@ -1,9 +1,10 @@
 <template>
   <div id="list-games">
+    <input type="text" v-model="search" placeholder="search games" />
     <ul>
-      <li v-for="game in games">
+      <li v-for="game in filteredGames">
         <h2>{{ game.title }}</h2>
-        <!-- Display platform and score only on click -->
+        <!-- A button which opens the modal that displays the game details -->
           <button v-on:click="showGameDetails(game)">Show Details</button>
       </li>
     </ul>
@@ -17,7 +18,8 @@ export default {
   },
   data () {
     return {
-      games: []
+      games: [],
+      search: '',
     }
   },
   methods:{
@@ -39,6 +41,13 @@ export default {
       }
       this.games = gamesArray.slice(20, 37);
     });
+  },
+  computed: {
+    filteredGames: function() {
+      return this.games.filter((game) => {
+        return game.title.toLowerCase().match(this.search.toLowerCase());
+      })
+    }
   }
 }
 </script>
@@ -64,5 +73,16 @@ li{
     padding: 30px;
     border: 1px solid #222;
     margin: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 40px;
 }
 </style>
